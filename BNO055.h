@@ -53,6 +53,12 @@ public:
     void ConfigOperationMode(uint8_t mode = BNO055_OPERATION_MODE_NDOF);
     void ConfigMagneticDeclination(float declinationDegrees);
     bool WriteOperationMode(uint8_t mode);
+
+    /// @brief Configures the mounting orientation of the Chip
+    /// @param mapConfig - bits to remap the 3D orientation of the axis
+    /// @param mapSign - bits to remap the +/- direction of the axis
+    bool WriteMountingOrientation(uint8_t mapConfig, uint8_t mapSign);
+
     // bool ConfigMagnetometer(int16_t offsetX, int16_t offsetY, int16_t offsetZ, float declinationAngle);
     bool ConfigUnits();
 

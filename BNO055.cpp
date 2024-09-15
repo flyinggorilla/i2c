@@ -99,6 +99,21 @@ bool BNO055::Reset()
   return true;
 }
 
+bool BNO055::WriteMountingOrientation(uint8_t mapConfig, uint8_t mapSign)
+{
+  SwitchToConfigMode();
+
+  uint8_t data[2] = {};
+  data[0] = mapSign;
+  data[1] = mapConfig;
+  if (!WriteRegister(BNO055_AXIS_MAP_SIGN_ADDR, (uint8_t *)&data, sizeof(data)))
+  {
+    ESP_LOGE(tag, "Error configuring mounting orientation");
+    return false;
+  }
+  return true;
+}
+
 bool BNO055::ConfigUnits()
 {
   SwitchToConfigMode();
