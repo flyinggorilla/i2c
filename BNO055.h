@@ -51,7 +51,6 @@ public:
 
     bool Reset();
     void ConfigOperationMode(uint8_t mode = BNO055_OPERATION_MODE_NDOF);
-    void ConfigMagneticDeclination(float declinationDegrees);
     bool WriteOperationMode(uint8_t mode);
 
     /// @brief Configures the mounting orientation of the Chip
@@ -86,10 +85,6 @@ public:
     /// @return 
     bool Init();
 
-    // int16_t mX = 0;
-    // int16_t mY = 0;
-    // int16_t mZ = 0;
-    float mDeclinationAngleDeg = 4.624743; // magnetic north is further east than true north   
     EulerHrpAngles mEulerHrpAngles = {};
     IMUStatus mStatus = {};
     IMUData mCalibration = {};

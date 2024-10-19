@@ -22,10 +22,6 @@ void BNO055::ConfigOperationMode(uint8_t mode)
   mOperationMode = mode;
 }
 
-void BNO055::ConfigMagneticDeclination(float declinationDegrees)
-{
-  mDeclinationAngleDeg = declinationDegrees;
-}
 
 /// @brief Operation modes for BNO055 sensor
 /// These modes define the functionality and fusion algorithms used by the sensor.
